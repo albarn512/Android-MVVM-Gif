@@ -44,7 +44,7 @@ public class TrendingDiscoverAdapter extends RecyclerView.Adapter<TrendingDiscov
     @Override
     public void onBindViewHolder(@NonNull TrendingDiscoverAdapter.ViewHolder holder, int position) {
         Glide.with(context).load(trendingResultsItems.get(position)
-                .getMedia().get(position).getNanomp4().getPreview())
+                .getMedia().get(0).getGif().getUrl())
                 .into(holder.ivThumb);
 
 

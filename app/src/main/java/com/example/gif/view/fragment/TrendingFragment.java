@@ -49,7 +49,7 @@ public class TrendingFragment extends Fragment {
         trendingDiscoverAdapter = new TrendingDiscoverAdapter(getContext());
         trendingDiscoverAdapter.notifyDataSetChanged();
 
-        rvTrending = view.findViewById(R.id.fragmentmovie_rv);
+        rvTrending = view.findViewById(R.id.fragmenttrending_rv);
         rvTrending.setLayoutManager(new GridLayoutManager(getContext(),2));
 
         trendingViewModel = new ViewModelProvider(this).get(TrendingViewModel.class);

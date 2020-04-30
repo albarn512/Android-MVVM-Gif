@@ -17,4 +17,16 @@ public class ApiMain {
         }
         return retrofit.create(TrendingRepository.class);
     }
+
+    public KategoriRepository getApiKategori(){
+        String BASE_URL = "https://api.tenor.com/";
+        if (retrofit == null){
+            retrofit = new Retrofit
+                    .Builder()
+                    .baseUrl(BASE_URL)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+        }
+        return retrofit.create(KategoriRepository.class);
+    }
 }

@@ -89,7 +89,7 @@ public class KategoriFragment extends Fragment {
         kategoriAdapter.notifyDataSetChanged();
 
         rvKategori = view.findViewById(R.id.fragmentkategori_rv);
-        rvKategori.setLayoutManager(new GridLayoutManager(getContext(),1));
+        rvKategori.setLayoutManager(new GridLayoutManager(getContext(),3));
 
         kategoriViewModel = new ViewModelProvider(this).get(KategoriViewModel.class);
         kategoriViewModel.setKategori();

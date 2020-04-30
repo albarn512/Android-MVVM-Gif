@@ -2,12 +2,11 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/itemlist_cvk"
-
-    android:layout_width="match_parent"
-    android:layout_height="100dp"
-    app:cardCornerRadius="4dp"
-    app:cardElevation="4dp"
-    android:layout_margin="6dp">
+    android:layout_width="100dp"
+    android:layout_height="60dp"
+    android:layout_marginStart="20dp"
+    android:layout_marginLeft="0dp"
+    android:layout_marginTop="10dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,9 +17,21 @@
             android:id="@+id/itemlist_ivk_thumbnail"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@drawable/ic_launcher_background" />
+            android:contentDescription="@null"
+            android:scaleType="centerCrop" />
 
+        <TextView
+            android:id="@+id/itemlist_tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:layout_gravity="center"
+            android:textColor="#000000"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAllCaps="true"
+            android:text="tag_name"
+            />
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

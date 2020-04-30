@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -43,6 +44,9 @@ public class KategoriAdapter extends RecyclerView.Adapter<KategoriAdapter.ViewHo
     public void onBindViewHolder(@NonNull KategoriAdapter.ViewHolder holder, int position) {
         Glide.with(context).load(kategoriItems.get(position)
         .getImage()).into(holder.ivThumb);
+
+        holder.tvTag.setText(kategoriItems.get(position).getName());
+
     }
 
     @Override
@@ -53,12 +57,13 @@ public class KategoriAdapter extends RecyclerView.Adapter<KategoriAdapter.ViewHo
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView ivThumb;
+        TextView tvTag;
         CardView cvItem;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             cvItem = itemView.findViewById(R.id.itemlist_cvk);
             ivThumb = itemView.findViewById(R.id.itemlist_ivk_thumbnail);
-
+            tvTag = itemView.findViewById(R.id.itemlist_tv_name);
         }
     }
 }

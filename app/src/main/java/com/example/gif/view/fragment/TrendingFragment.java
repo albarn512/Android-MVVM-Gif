@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.gif.R;
 import com.example.gif.adapter.TrendingDiscoverAdapter;
@@ -30,6 +31,7 @@ public class TrendingFragment extends Fragment {
     private TrendingDiscoverAdapter trendingDiscoverAdapter;
     private RecyclerView rvTrending;
     private TrendingViewModel trendingViewModel;
+
     public TrendingFragment() {
         // Required empty public constructor
     }
@@ -50,20 +52,22 @@ public class TrendingFragment extends Fragment {
         trendingDiscoverAdapter.notifyDataSetChanged();
 
         rvTrending = view.findViewById(R.id.fragmenttrending_rv);
-        rvTrending.setLayoutManager(new GridLayoutManager(getContext(),2));
+        rvTrending.setLayoutManager(new GridLayoutManager(getContext(), 2));
 
         trendingViewModel = new ViewModelProvider(this).get(TrendingViewModel.class);
         trendingViewModel.setTrendingDiscover();
         trendingViewModel.getTrending().observe(this, getTrendingDiscover);
 
         rvTrending.setAdapter(trendingDiscoverAdapter);
+        Toast.makeText(view.getContext(), "Klik untuk share", Toast.LENGTH_SHORT).show();
+
 
     }
 
     private Observer<ArrayList<TrendingResultsItem>> getTrendingDiscover = new Observer<ArrayList<TrendingResultsItem>>() {
         @Override
         public void onChanged(ArrayList<TrendingResultsItem> trendingResultsItems) {
-            if (trendingResultsItems !=null){
+            if (trendingResultsItems != null) {
                 trendingDiscoverAdapter.setData(trendingResultsItems);
             }
         }

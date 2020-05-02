@@ -29,4 +29,16 @@ public class ApiMain {
         }
         return retrofit.create(KategoriRepository.class);
     }
+
+    public SearchRepository getApiSearch(){
+        String BASE_URL = "https://api.tenor.com/";
+        if (retrofit == null){
+            retrofit = new Retrofit
+                    .Builder()
+                    .baseUrl(BASE_URL)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+        }
+        return retrofit.create(SearchRepository.class);
+    }
 }

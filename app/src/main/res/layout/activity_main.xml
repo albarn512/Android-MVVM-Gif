@@ -4,19 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.activity.MainActivity"
-    android:orientation="vertical">
+    android:background="@color/cardview_dark_background"
+    android:orientation="vertical"
+    tools:context=".view.activity.MainActivity">
 
     <FrameLayout
         android:id="@+id/activitymain_fragmentcontainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"/>
+        android:layout_weight="1" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/activitymain_bottomnav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:menu="@menu/menu_bottomnavbar"
-        />
+        app:menu="@menu/menu_bottomnavbar" />
 </LinearLayout>

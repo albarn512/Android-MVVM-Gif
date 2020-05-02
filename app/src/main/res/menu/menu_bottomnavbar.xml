@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/menu_bottomnav_trending"
-        android:icon="@drawable/trending"
+        android:icon="@drawable/trendingw"
         android:title="Trending"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/menu_bottomnav_kategori"
-        android:icon="@drawable/kategori"
+        android:icon="@drawable/listw"
         android:title="Kategori"
         app:showAsAction="ifRoom" />
 </menu>

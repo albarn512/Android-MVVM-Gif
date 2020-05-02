@@ -52,8 +52,10 @@ public class KategoriAdapter extends RecyclerView.Adapter<KategoriAdapter.ViewHo
             public void onClick(View v) {
                 Intent intent = new Intent(context, IsiActivity.class);
                 context.startActivity(intent);
+
             }
         });
+
     }
 
     @Override

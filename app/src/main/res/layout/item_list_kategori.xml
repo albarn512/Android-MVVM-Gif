@@ -5,10 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="115dp"
     android:layout_marginStart="10dp"
-    android:layout_marginEnd="10dp"
     android:layout_marginLeft="0dp"
     android:layout_marginTop="10dp"
-    android:layout_marginBottom="5dp">
+    android:layout_marginEnd="10dp"
+    android:layout_marginBottom="5dp"
+    android:background="@color/cardview_dark_background">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,23 +20,23 @@
             android:id="@+id/itemlist_ivk_thumbnail"
             android:layout_width="match_parent"
             android:layout_height="100dp"
+            android:background="@color/cardview_dark_background"
             android:contentDescription="@null"
-            android:scaleType="centerCrop"
-            />
+            android:scaleType="centerCrop" />
 
         <TextView
             android:id="@+id/itemlist_tv_name"
             android:layout_width="match_parent"
             android:layout_height="15dp"
-            android:gravity="center_horizontal"
+            android:layout_marginBottom="6dp"
+            android:background="@color/cardview_dark_background"
             android:ellipsize="end"
+            android:gravity="center_horizontal"
             android:maxLines="1"
-            android:textAllCaps="true"
-            android:textColor="#000000"
-            android:textSize="15sp"
             android:text="@string/tag_name"
-
-            android:layout_marginBottom="6dp"/>
+            android:textAllCaps="true"
+            android:textColor="#ffffff"
+            android:textSize="13sp" />
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

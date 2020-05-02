@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 import com.example.gif.R;
 import com.example.gif.adapter.IsiAdapter;
@@ -20,7 +21,7 @@ public class IsiActivity extends AppCompatActivity {
     private RecyclerView rvIsi;
    private SearchViewModel searchViewModel;
    private IsiAdapter isiAdapter;
-
+    private TextView tvTag;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +30,7 @@ public class IsiActivity extends AppCompatActivity {
         isiAdapter = new IsiAdapter(getApplicationContext());
         isiAdapter.notifyDataSetChanged();
 
+        tvTag = findViewById(R.id.activity_k_tv);
         rvIsi = findViewById(R.id.activity_k_rv);
         rvIsi.setLayoutManager(new GridLayoutManager(this, 2));
 

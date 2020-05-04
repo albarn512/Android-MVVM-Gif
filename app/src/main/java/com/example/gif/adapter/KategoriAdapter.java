@@ -51,6 +51,7 @@ public class KategoriAdapter extends RecyclerView.Adapter<KategoriAdapter.ViewHo
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, IsiActivity.class);
+                intent.putExtra("nama",kategoriItems.get(position).getName());
                 context.startActivity(intent);
 
             }

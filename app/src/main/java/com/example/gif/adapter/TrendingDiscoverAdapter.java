@@ -70,12 +70,11 @@ public class TrendingDiscoverAdapter extends RecyclerView.Adapter<TrendingDiscov
         holder.ivThumb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent shareIntent = new Intent();
-                shareIntent.setAction(Intent.ACTION_SEND);
-                Uri uriToImage = Uri.parse(trendingResultsItems.get(position)
-                        .getMedia().get(0).getGif().getUrl());
-                shareIntent.putExtra(Intent.EXTRA_STREAM, uriToImage);
-                shareIntent.setType("image/gif");
+                Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                shareIntent.setType("text/plain");
+
+                String link = trendingResultsItems.get(position).getMedia().get(0).getGif().getUrl();
+                shareIntent.putExtra(Intent.EXTRA_TEXT,link);
                 context.startActivity(Intent.createChooser(shareIntent, context.getResources().getText(R.string.send_to)));
 
                 /*Intent intent = new Intent(Intent.ACTION_SEND);

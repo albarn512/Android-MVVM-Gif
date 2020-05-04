@@ -36,7 +36,7 @@
             android:text="@string/tag_name"
             android:textAllCaps="true"
             android:textColor="#ffffff"
-            android:textSize="13sp" />
+            android:textSize="12sp" />
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

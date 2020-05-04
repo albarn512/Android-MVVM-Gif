@@ -34,7 +34,7 @@ public class IsiActivity extends AppCompatActivity {
         rvIsi = findViewById(R.id.activity_k_rv);
         rvIsi.setLayoutManager(new GridLayoutManager(this, 2));
 
-
+        getInten();
         searchViewModel = new ViewModelProvider(this).get(SearchViewModel.class);
         searchViewModel.setSearch();
         searchViewModel.getIsi().observe(this,getIsiList);
@@ -52,4 +52,11 @@ public class IsiActivity extends AppCompatActivity {
     };
 
 
+    public void getInten(){
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            String getTitle = bundle.getString("nama");
+            tvTag.setText(getTitle);
+        }
+    }
 }

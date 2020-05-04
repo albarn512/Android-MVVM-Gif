@@ -18,12 +18,12 @@ public class SearchViewModel extends ViewModel {
     private ApiMain apiMain;
     private MutableLiveData<ArrayList<IsiItem>> listSearch = new MutableLiveData<>();
 
-    public void setSearch(){
+    public void setSearch(String search){
         if (this.apiMain == null){
             apiMain = new ApiMain();
         }
 
-        apiMain.getApiSearch().getSearch().enqueue(new Callback<GoodNightResponse>() {
+        apiMain.getApiSearch().getSearch(search).enqueue(new Callback<GoodNightResponse>() {
             @Override
             public void onResponse(Call<GoodNightResponse> call, Response<GoodNightResponse> response) {
                 GoodNightResponse goodNightResponse = response.body();

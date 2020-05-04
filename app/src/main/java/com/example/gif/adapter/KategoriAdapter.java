@@ -16,6 +16,7 @@ import com.bumptech.glide.Glide;
 import com.example.gif.R;
 import com.example.gif.model.kategori.KategoriItem;
 import com.example.gif.view.activity.IsiActivity;
+import com.example.gif.view.viewmodel.SearchViewModel;
 
 import java.util.ArrayList;
 
@@ -23,7 +24,7 @@ public class KategoriAdapter extends RecyclerView.Adapter<KategoriAdapter.ViewHo
 
     private ArrayList<KategoriItem> kategoriItems = new ArrayList<>();
     private Context context;
-   // private static String BASE_IMAGE_URL = "https://api.tenor.com/v1/";
+   SearchViewModel searchViewModel;
 
     public KategoriAdapter(Context context){this.context = context;}
 
@@ -50,8 +51,10 @@ public class KategoriAdapter extends RecyclerView.Adapter<KategoriAdapter.ViewHo
         holder.ivThumb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent(context, IsiActivity.class);
                 intent.putExtra("nama",kategoriItems.get(position).getName());
+                intent.putExtra("search",kategoriItems.get(position).getSearchterm());
                 context.startActivity(intent);
 
             }

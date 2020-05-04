@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
@@ -22,6 +21,7 @@ public class IsiActivity extends AppCompatActivity {
    private SearchViewModel searchViewModel;
    private IsiAdapter isiAdapter;
     private TextView tvTag;
+    private String getSearch;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +36,7 @@ public class IsiActivity extends AppCompatActivity {
 
         getInten();
         searchViewModel = new ViewModelProvider(this).get(SearchViewModel.class);
-        searchViewModel.setSearch();
+        searchViewModel.setSearch(getSearch);
         searchViewModel.getIsi().observe(this,getIsiList);
 
     }
@@ -56,6 +56,7 @@ public class IsiActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             String getTitle = bundle.getString("nama");
+             getSearch = bundle.getString("search");
             tvTag.setText(getTitle);
         }
     }
